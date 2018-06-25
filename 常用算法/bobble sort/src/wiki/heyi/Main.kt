@@ -15,13 +15,16 @@ fun main(args: Array<String>) {
 
 
 fun bobbleSort(arr:IntArray){
-    for ( i in 0..arr.size-1){
-        for (j in i+1..arr.size-1){
-            if (arr[j]<arr[i]){
-                val temp = arr[i]
-                arr[i]= arr[j]
-                arr[j]=temp
-            }
-        }
+    for ( i in 0..arr.size-2){
+        //外层控制排序趟数
+       for (j in 0..arr.size-2-i){
+           //内层控制每趟的次数
+           if (arr[j]>arr[j+1]){
+               val temp = arr[j]
+               arr[j]=arr[j+1]
+               arr[j+1]= temp
+           }
+
+       }
     }
 }
